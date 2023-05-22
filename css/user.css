@@ -1,0 +1,51 @@
+@import url(./index.css);
+body{
+    background-image: var(--bg);
+    height: 100vh;
+}
+.main-body{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+*{
+    color: #ffffff;
+    font-size: var(--step--2);
+}
+.mani{
+    width: 50%;
+    text-align: center;
+}
+table{
+    width: 50%;
+    padding: 0;
+}
+tr,td,th{
+    border: 1px solid #000000;
+}
+input{
+    width: 70%;
+    background-color: #ffffff80;
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.5rem;
+    color: #000000;
+}
+input:focus{
+    border-bottom: 2px solid #ffffff;
+    outline: none;
+}
+.mani label{
+    display: inline-block;
+} label, input{
+    margin-block: 0.5rem;
+}
+button{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+button:hover{
+    cursor: pointer;
+}

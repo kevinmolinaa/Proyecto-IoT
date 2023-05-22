@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/user.js"></script>
+    <link rel="stylesheet" href="./css/user.css">
+    <title>User Form</title>
+</head>
+
+<body onload="readAllUsers()" class="grid">
+    <div class="main-body ">
+        <div class="mani">
+            <label for="name">Name:</label><br>
+            <input id="name" type="text" placeholder="Name" required><br>
+            <label for="lastname">Lastname:</label><br>
+            <input id="lastname" type="text" placeholder="Lastname" required><br>
+            <label for="email">Email:</label><br>
+            <input id="email" type="text" placeholder="Email" required><br>
+            <label for="password">Password:</label><br>
+            <input id="password" type="text" placeholder="Password" required><br>
+            <button  onclick="createUser();">Guardar</button>
+        </div>
+        <table id="table-user" >
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>lastname</th>
+                    <th>email</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>
