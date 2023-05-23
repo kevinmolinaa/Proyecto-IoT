@@ -5,9 +5,9 @@
     error_reporting(E_ALL);
 
     header("Content-Type: application/json; charset=UTF-8");
-    include_once '../class/class_user.php';
+    include_once '../class/class_caja.php';
     
-    $user = new user_class();
+    $user = new caja_class();
 
     switch($_SERVER['REQUEST_METHOD']){
         
@@ -30,8 +30,8 @@
             }
             else
             
-            if(isset($_GET['email'])){
-                    $getId = $user->getUser(null,$_GET['email']);
+            if(isset($_GET['cliente'])){
+                    $getId = $user->getUser(null,$_GET['cliente']);
                     if(is_array($getId))
                     {
                         $result["data"] = $getId;
@@ -60,8 +60,8 @@
 
         case 'POST': //create
             $_POST = json_decode(file_get_contents('php://input'), true);
-            if( $user->insertUser($_POST['name'],$_POST['lastname'],
-                                   $_POST['email'],$_POST['password']))
+            if( $user->insertUser($_POST['cliente'],$_POST['producto'],
+                                   $_POST['ubicacion'],$_POST['precio'],$_POST['fecha']))
             {
                 $result["status"] = 'success';
                 $result["data"] = null;
@@ -90,8 +90,8 @@
         
         case 'PUT': //update
             $_PUT = json_decode(file_get_contents('php://input'),true);
-            $updateId =  $user->updateUser($_PUT['id'],$_PUT['name'],$_PUT['lastname'],
-            $_PUT['email'],$_PUT['password']);
+            $updateId =  $user->updateUser($_PUT['id'],$_PUT['cliente'],$_PUT['producto'],
+            $_PUT['ubicacion'],$_PUT['precio'],$_PUT['fecha']);
             if($updateId)
             {
                 $result["data"] = null;

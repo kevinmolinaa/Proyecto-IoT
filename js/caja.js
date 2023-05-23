@@ -1,4 +1,4 @@
-const url = '../api/api_user.php';
+const url = '../api/api_caja.php';
 var data = [];
 
 function readAllUsers(){
@@ -21,17 +21,19 @@ function readAllUsers(){
 
 function llenarTabla(data)
 {
-    document.querySelector('#table-user tbody').innerHTML = '';
+    document.querySelector('#table-caja tbody').innerHTML = '';
     for(let i=0;i<data.length;i++){
-        document.querySelector('#table-user tbody').innerHTML += 
+        document.querySelector('#table-caja tbody').innerHTML += 
         `<tr>
-            <td>${data[i].user_id}</td>
-            <td>${data[i].user_name}</td>
-            <td>${data[i].user_last_name}</td>
-            <td>${data[i].user_email}</td>
-            <td><button type="button" onclick="deleteUser(${data[i].user_id})">Delete</button>
-            <button type="button" onclick="updateUser(${data[i].user_id})">Update</button> 
-            <button type="button" onclick="readUserById(${data[i].user_id})">Read</button> </td>
+            <td>${data[i].id}</td>
+            <td>${data[i].cliente}</td>
+            <td>${data[i].producto}</td>
+            <td>${data[i].ubicacion}</td>
+            <td>${data[i].precio}</td>
+            <td>${data[i].fecha}</td>
+            <td><button type="button" onclick="deleteUser(${data[i].id})">Borrar</button>
+            <button type="button" onclick="updateUser(${data[i].id})">Actualizar</button> 
+            <button type="button" onclick="readUserById(${data[i].id})">Leer</button> </td>
         </tr>`
     }
 }
@@ -54,10 +56,11 @@ function deleteUser(id_del){
 
 function createUser(){
 let user = { 
-    name : document.getElementById('name').value,
-    lastname : document.getElementById('lastname').value,
-    email : document.getElementById('email').value,
-    password : document.getElementById('password').value
+    cliente : document.getElementById('cliente').value,
+    producto : document.getElementById('producto').value,
+    ubicacion : document.getElementById('ubicacion').value,
+    precio : document.getElementById('precio').value,
+    fecha : document.getElementById('fecha').value,
     };
 
     axios({
@@ -77,17 +80,18 @@ let user = {
 }
 
 function updateUser(id_update){
-    name_update = document.getElementById('name').value;
+    cliente_update = document.getElementById('cliente').value;
 
-    if ( name_update!= "")
+    if ( cliente_update!= "")
     {
     
     let user = { 
         id : id_update,
-        name : name_update,
-        lastname : document.getElementById('lastname').value,
-        email : document.getElementById('email').value,
-        password : document.getElementById('password').value
+        cliente : cliente_update,
+        producto : document.getElementById('producto').value,
+        ubicacion : document.getElementById('ubicacion').value,
+        precio : document.getElementById('precio').value,
+        fecha : document.getElementById('fecha').value,
         };
 
     axios({
@@ -117,9 +121,11 @@ function readUserById(id){
         responseType:'json'
         }).then(res =>{
             console.log(res.data);
-            document.getElementById('name').value = res.data.data[0].user_name;
-            document.getElementById('lastname').value = res.data.data[0].user_last_name;
-            document.getElementById('email').value = res.data.data[0].user_email;
+            document.getElementById('cliente').value = res.data.data[0].cliente;
+            document.getElementById('producto').value = res.data.data[0].producto;
+            document.getElementById('ubicacion').value = res.data.data[0].ubicacion;
+            document.getElementById('precio').value = res.data.data[0].precio;
+            document.getElementById('fecha').value = res.data.data[0].fecha;
         }).catch(error=>{
             console.error(error);
         });
