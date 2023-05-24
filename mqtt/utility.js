@@ -76,12 +76,12 @@ function onMessageArrived(message) {
 }
 
 function connect() {
-  var hostname = 'localhost';
+  var hostname = '34.141.155.221';
   var port = '9001';
   var clientId = "js-utility-" + makeid();
   var path = '/ws';
-  var user = '';
-  var pass = '';
+  var user = 'kevin';
+  var pass = 'kevin';
   var keepAlive = 60;
   var timeout = 3;
   var tls = false;
