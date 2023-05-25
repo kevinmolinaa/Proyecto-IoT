@@ -1,6 +1,6 @@
 var client = null;
 var connected = false;
-topics = ['boton_bool','valor_analog'];
+topics = ['Led','Analogico'];
 
 connect();
 
@@ -66,9 +66,9 @@ function onMessageArrived(message) {
 
   //document.getElementById(message.destinationName).innerHTML = payload;
 
-  if(message.destinationName.includes("valor_analog"))
+  if(message.destinationName.includes("Analogico"))
   {
-    document.getElementById('valor_analog').innerHTML = (message.payloadString);
+    document.getElementById('Analogico').innerHTML = (message.payloadString);
   }
 
 

@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
-
+<style>
+  label{
+    margin-inline: 2rem;
+  }
+</style>
 <body>
   <div class="container grid">
     <!-- Connection panel -->
@@ -25,30 +29,30 @@
                 <table>
                   <tbody>
                     <tr>
-                      <td><label for="boton_bool" class="label-toggle" >boton_bool</label></td>
+                      <td><label for="Led" class="label-toggle" >Led</label></td>
                       <td>
                         <label class="switch">
-                          <input type="checkbox" id ="boton_bool" disabled>
+                          <input type="checkbox" id ="Led" disabled>
                           <span class="slider round"></span>
                         </label>
                     </td>
                     </tr>
                     
                     <tr>
-                      <td><label for="valor_analog">valor_analog</label></td>
-                      <td><label id="valor_analog"></label></td>
+                      <td><label for="Analogico">Analogico</label></td>
+                      <td><label id="Analogico"></label></td>
                     </tr>
                   </tbody>
                 </table>
                 
                 <div class="form-group">
                   <label for="publishButton"></label>
-                  <button id="publishButton" type="button" class="btn btn-default" onclick="publish('boton_bool',0, '1', false);" disabled>Publicar 1 en boton_bool</button>
+                  <button id="publishButton" type="button" class="btn btn-default" onclick="publish('Led',0, '1', false);" disabled>Encender Led: 1</button>
                 </div>              
 
                 <div class="form-group">
                   <label for="publishButton2"></label>
-                  <button id="publishButton2" type="button" class="btn btn-default" onclick="publish('boton_bool',0, '0', false);" disabled>Publicar 0 en boton_bool</button>
+                  <button id="publishButton2" type="button" class="btn btn-default" onclick="publish('Led',0, '0', false);" disabled>Apagar Led: 0</button>
                 </div>                 
 
                 <div class="form-group">
@@ -57,7 +61,7 @@
 
                 <div class="form-group">
                   <label for="publishButton3"></label>
-                  <button id="publishButton3" type="button" class="btn btn-default" onclick="publish('valor_analog',0, document.getElementById('analog_value').value, false);" >Publicar Analogico</button>
+                  <button id="publishButton3" type="button" class="btn btn-default" onclick="publish('Analogico',0, document.getElementById('analog_value').value, false);" >Publicar Analogico</button>
                 </div>
                 
                 <div class="form-group">
