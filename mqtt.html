@@ -10,14 +10,22 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <style>
+  .hijo > *{
+    transform: scale(2);
+  }
   label{
     margin-inline: 2rem;
+  }
+    @media (min-width: 1024px){
+      .hijo > *{
+        transform: scale(1);
+      }
   }
 </style>
 <body>
   <div class="container grid">
     <!-- Connection panel -->
-    <div class="row">
+    <div class="row hijo">
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">

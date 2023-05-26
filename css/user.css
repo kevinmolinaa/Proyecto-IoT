@@ -3,25 +3,35 @@ body{
     background-image: var(--bg);
     height: 100vh;
 }
+header h1{
+    text-align: center;
+    font-size: var(--step-4);
+}
 .main-body{
-    width: 80%;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
     padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
 }
 *{
     color: #ffffff;
     font-size: var(--step--2);
 }
 .mani{
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 table{
-    width: 50%;
-    padding: 0;
+    width: 100%;
+    padding: 0.2rem;
+    margin-top: 2rem;
+    background-color: #c7c7c79a;
+    border-radius: 0.5rem;
+    flex-grow: 1;
 }
-tr,td,th{
+th{
     border: 1px solid #000000;
 }
 input{
@@ -49,3 +59,24 @@ button{
 button:hover{
     cursor: pointer;
 }
+@media (min-width: 1024px){
+    .main-body{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 6rem;
+    }
+    header{
+        width: 100%;
+        align-self: center;
+    }
+    .mani{
+        width: 40%;
+        height: 100%;
+        align-self: center;
+    }
+    table{
+        width: 60%;
+        padding: 0.5rem;
+        margin-top: 0;
+    }
+  }
