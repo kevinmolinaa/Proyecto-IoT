@@ -1,0 +1,23 @@
+{
+    "get": {
+      "id": "2"
+    },
+    "post": {
+      "cliente": "Laura",
+      "producto": "Caramelos",
+      "ubicacion": "Calle Y",
+      "precio": "15",
+      "fecha": "2023-05-26"
+    },
+    "put": {
+        "id": "2",
+        "cliente": "Kevin",
+        "producto": "Galletas",
+        "ubicacion": "Calle X",
+        "precio": "30",
+        "fecha": "2023-05-25"
+      },
+      "delete": {
+        "id": "2"
+      }
+}
