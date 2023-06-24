@@ -1,10 +1,10 @@
 <?php 
     $mqtt_secret = "";
     class Database {
-        private $host = 'localhost';
-        private $database_name = 'iot';
-        private $username = 'admin';
-        private $password = 'admin';
+        private $host = '34.141.155.221';
+        private $database_name = 'Venta';
+        private $username = 'kevin';
+        private $password = 'kevin';
         public $conn;
         
         public function getConnection(){
