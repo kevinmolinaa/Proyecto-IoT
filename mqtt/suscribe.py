@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import paho.mqtt.client as mqtt
 
 def on_message(mosq, obj, msg):
